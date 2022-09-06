@@ -61,3 +61,9 @@
     stroke-width: 30px;
     border-radius: 24px;
 }
+
+@mixin hoverBtn() {
+    box-shadow: inset 150px 0 0 0 $-main-color;
+    color:#000;
+    border-radius: 12px;
+}

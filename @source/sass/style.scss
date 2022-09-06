@@ -2,7 +2,7 @@
 // ************MAIN SETTINGS***************
 .main {
     max-width: 1170px;
-    margin: 60px auto;
+    margin: 70px auto;
 }
 // ************HEADER***************
 .header {
@@ -32,8 +32,17 @@
 // ************MAIN CONTENT***************
 .content {
     @include setContent();
-    margin-top: 50px;
+    flex-basis: 40%;
+    margin-top: 40px;
     gap: 100px;
+    position: relative;
+    &::before {
+        @include createLine();
+        top: -30px;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+    }
     //************HERO AND PATCH***************
     &_hero {
         @include createBorder();
@@ -49,11 +58,12 @@
     &_hero_img {
         @include createBorder();
     }
-    //************SECTION***************
+    //************TEXT***************
     &_text {
-        @include setHeader();
+        position: relative;
         padding: 70px 70px;
-    }
+        @include setHeader();
+        }
 
     &_name {
         @include setTextStyle('Roboto', 36px, 900, $-text-color, 30px);
@@ -81,6 +91,7 @@
         width: 35px;
         height: 35px;
         margin-bottom: 50px;
+        transition: stroke-width 0.5s ease-in;
         &:hover {
            @include hoverSocials();
         }
@@ -88,6 +99,7 @@
 
     &_text_text {
         @include setTextStyle('Raleway', 14px ,500, $-content-text-color, 20px);
+        max-width: 420px;
         line-height: 24px;
         padding: 5px;
     }
@@ -109,11 +121,17 @@
     &_btn {
         width: 150px;
         height: 40px;
-        @include createBorder();
-        @include setTextStyle('Open Sans', 16px, 700, $-text-color, 0);
         text-transform: uppercase;
         padding: 5px 10px;
-    }
+        background: #fff;
+        box-shadow: inset 0 0 0 0 $-main-color;
+        transition: ease-in 0.4s;
+        @include createBorder();
+        @include setTextStyle('Open Sans', 16px, 700, $-text-color, 0);
+        &:hover {
+            @include hoverBtn();
+        }
+    } 
 
 }
 
