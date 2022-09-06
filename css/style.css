@@ -178,6 +178,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .content_hero_img {
   border: 1px solid #FFCC00;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+.content_hero_img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .content_text {
   position: relative;
