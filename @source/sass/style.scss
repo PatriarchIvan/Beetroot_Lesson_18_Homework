@@ -1,0 +1,119 @@
+@import 'reset', 'vars', 'temp', 'mixins', 'fonts';
+// ************MAIN SETTINGS***************
+.main {
+    max-width: 1170px;
+    margin: 60px auto;
+}
+// ************HEADER***************
+.header {
+    @include setHeader();
+    text-transform: uppercase;
+
+    &_sup {
+        @include setTextStyle('Raleway', 18px, 500, $-secondary-title-color, 15px);
+    }
+
+    &_title {
+        @include setTextStyle('Roboto', 60px, 900, $-main-color, 40px);
+    }
+
+    &_elem {
+        position: relative;
+        &::before {
+            @include createLine();
+            left: -220px;
+        }
+        &::after {
+            @include createLine();
+            right: -220px;
+        }
+    }
+}
+// ************MAIN CONTENT***************
+.content {
+    @include setContent();
+    margin-top: 50px;
+    gap: 100px;
+    //************HERO AND PATCH***************
+    &_hero {
+        @include createBorder();
+        position: relative;
+        z-index: 2;
+        padding: 15px;
+    }
+
+    &_patch {
+       @include cutBorders();
+    }
+
+    &_hero_img {
+        @include createBorder();
+    }
+    //************SECTION***************
+    &_text {
+        @include setHeader();
+        padding: 70px 70px;
+    }
+
+    &_name {
+        @include setTextStyle('Roboto', 36px, 900, $-text-color, 30px);
+        position: relative;
+
+        &:after {
+            @include createLine();
+            width: 100px;
+            bottom: -30px;
+            left: 60px;
+        }
+    }
+
+    &_sub {
+        @include setTextStyle('Raleway', 24px, 400, $-text-color, 30px);
+        margin-top: 30px;
+    }
+
+    &_socials {
+        @include setContent();
+        gap: 10px;
+    }
+
+    &_socials_img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 50px;
+        &:hover {
+           @include hoverSocials();
+        }
+    }
+
+    &_text_text {
+        @include setTextStyle('Raleway', 14px ,500, $-content-text-color, 20px);
+        line-height: 24px;
+        padding: 5px;
+    }
+
+    &_text_elem {
+        position: relative;
+        width: 20px;
+        height: 4px;
+        background: $-main-color;
+        &::before {
+            @include createLineLittle();
+        }
+        &::after {
+            @include createLineLittle();
+            left: 25px;
+        }
+    }
+
+    &_btn {
+        width: 150px;
+        height: 40px;
+        @include createBorder();
+        @include setTextStyle('Open Sans', 16px, 700, $-text-color, 0);
+        text-transform: uppercase;
+        padding: 5px 10px;
+    }
+
+}
+
