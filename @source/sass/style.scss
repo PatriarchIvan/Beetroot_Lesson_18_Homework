@@ -57,6 +57,11 @@
 
     &_hero_img {
         @include createBorder();
+        transition: transform 0.5s ease;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
     //************TEXT***************
     &_text {
