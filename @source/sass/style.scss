@@ -1,9 +1,11 @@
 @import 'reset', 'vars', 'temp', 'mixins', 'fonts';
+
 // ************MAIN SETTINGS***************
 .main {
-    max-width: 1170px;
+    max-width: (1070px / 1400px) * 100%;
     margin: 70px auto;
 }
+
 // ************HEADER***************
 .header {
     @include setHeader();
@@ -19,16 +21,19 @@
 
     &_elem {
         position: relative;
+
         &::before {
             @include createLine();
             left: -220px;
         }
+
         &::after {
             @include createLine();
             right: -220px;
         }
     }
 }
+
 // ************MAIN CONTENT***************
 .content {
     @include setContent();
@@ -36,6 +41,7 @@
     margin-top: 40px;
     gap: 100px;
     position: relative;
+
     &::before {
         @include createLine();
         top: -30px;
@@ -43,6 +49,7 @@
         width: 1px;
         height: 100%;
     }
+
     //************HERO AND PATCH***************
     &_hero {
         @include createBorder();
@@ -52,23 +59,25 @@
     }
 
     &_patch {
-       @include cutBorders();
+        @include cutBorders();
     }
 
     &_hero_img {
         @include createBorder();
         transition: transform 0.5s ease;
+
         &:hover {
             cursor: pointer;
             transform: scale(1.1);
         }
     }
+
     //************TEXT***************
     &_text {
         position: relative;
         padding: 70px 70px;
         @include setHeader();
-        }
+    }
 
     &_name {
         @include setTextStyle('Roboto', 36px, 900, $-text-color, 30px);
@@ -97,13 +106,14 @@
         height: 35px;
         margin-bottom: 50px;
         transition: stroke-width 0.5s ease-in;
+
         &:hover {
-           @include hoverSocials();
+            @include hoverSocials();
         }
     }
 
     &_text_text {
-        @include setTextStyle('Raleway', 14px ,500, $-content-text-color, 20px);
+        @include setTextStyle('Raleway', 14px, 500, $-content-text-color, 20px);
         max-width: 420px;
         line-height: 24px;
         padding: 5px;
@@ -114,9 +124,11 @@
         width: 20px;
         height: 4px;
         background: $-main-color;
+
         &::before {
             @include createLineLittle();
         }
+
         &::after {
             @include createLineLittle();
             left: 25px;
@@ -133,10 +145,10 @@
         transition: ease-in 0.4s;
         @include createBorder();
         @include setTextStyle('Open Sans', 16px, 700, $-text-color, 0);
+
         &:hover {
             @include hoverBtn();
         }
-    } 
+    }
 
 }
-
